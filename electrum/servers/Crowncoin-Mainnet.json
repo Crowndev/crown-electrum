@@ -11,10 +11,10 @@
         "t": "50001",
         "version": "1.4"
     },
-    "electrumx.multicoin.co": {
+    "crown.electrumx.multicoin.co": {
         "pruning": "-",
-        "s": "50002",
-        "t": "50001",
+        "s": "50022",
+        "t": "50021",
         "version": "1.4"
     }
 } 
