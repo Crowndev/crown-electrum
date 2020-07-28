@@ -105,7 +105,7 @@ class InvoiceList(MyTreeView):
                 icon_name = 'lightning.png'
             else:
                 key = item.id
-                icon_name = 'bitcoin.png'
+                icon_name = '{{buildmatrix_coin_name_normal}}.png'
                 if item.bip70:
                     icon_name = 'seal.png'
             status = self.parent.wallet.get_invoice_status(item)
