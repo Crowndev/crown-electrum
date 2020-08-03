@@ -3,7 +3,7 @@ name: Release Build
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - 'never-run-this v*.*.*'
   
 jobs:
   osx-build:
