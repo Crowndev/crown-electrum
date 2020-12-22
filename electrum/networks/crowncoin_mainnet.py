@@ -62,7 +62,9 @@ class CrowncoinMainnet(AbstractNet, AuxPowMixin, StakeMixin):
     MIN_POS_WORK_LIMIT = 0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
     BLOCK_EXPLORERS = {
-        'CryptoID.info': ('https://chainz.cryptoid.info/crw/', {'tx': 'tx.dws?', 'addr': 'address.dws?'}),
+        'iquidus-01': ('https://iquidus-01.crownplatform.com/', {'tx': 'tx/', 'addr': 'address/'}),
+		'insight-02': ('https://insight-02.crownplatform.com/', {'tx': 'tx/ ', 'addr': 'address/'}),
+		'CryptoID.info': ('https://chainz.cryptoid.info/crw/', {'tx': 'tx.dws?', 'addr': 'address.dws?'}),
         'system default': ('blockchain:/', {'tx': 'tx/', 'addr': 'address/'}),
     }
 
