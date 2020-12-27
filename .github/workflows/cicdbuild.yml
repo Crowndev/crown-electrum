@@ -30,7 +30,7 @@ jobs:
           name: crown-electrum-osx
           path: |
             dist/*	
-	    crown-osx.zip
+            crown-osx.zip
 
   linux-build:
     name: Build Crown Electrum Linux Asset
@@ -86,7 +86,7 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
-	with:
+        with:
           name: crown-electrum-windows
           path: |
             contrib/build-wine/dist/*
