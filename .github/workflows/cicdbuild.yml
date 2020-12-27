@@ -20,16 +20,12 @@ jobs:
       
       - name: Run Build
         run: ./contrib/osx/make_osx
-      
-      - name: Package Files for upload
-        run: zip -r crown-osx.zip dist
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
-	with:
-	  name: crown-electrum-osx
-	  path: dist/*	
-		crown-osx.zip
+      	with:
+	        name: crown-electrum-osx
+	        path: dist/*	
           
   linux-build:
     name: Build Crown Electrum Linux Asset
@@ -50,15 +46,11 @@ jobs:
       - name: Build project
         run: sudo docker run --name electrum-appimage-builder-cont -v $PWD:/opt/electrum --rm --workdir /opt/electrum/contrib/build-linux/appimage electrum-appimage-builder-img ./build.sh
 
-      - name: Zip Files
-        run: zip -r crown-linux.zip dist
-
       - name: Upload artifact
         uses: actions/upload-artifact@v2
-	with:
-	  name: crown-electrum-linux
-	  path: dist/*
-		crown-linux.zip
+      	with:
+	        name: crown-electrum-linux
+	        path: dist/*
           
   windows-build:
     name: Build Crown Electrum Windows Asset
@@ -79,12 +71,8 @@ jobs:
       - name: Build project
         run: sudo docker run --name electrum-wine-builder-cont -v $PWD:/opt/wine64/drive_c/electrum --rm --workdir /opt/wine64/drive_c/electrum/contrib/build-wine electrum-wine-builder-img ./build.sh
 
-      - name: Zip Files
-        run: zip -r crown-windows.zip ./contrib/build-wine/dist
-
       - name: Upload artifact
         uses: actions/upload-artifact@v2
-	with:
-	  name: crown-electrum-windows
-	  path: contrib/build-wine/dist/*
-		crown-windows.zip
+      	with:
+	        name: crown-electrum-windows
+	        path: contrib/build-wine/dist/*
