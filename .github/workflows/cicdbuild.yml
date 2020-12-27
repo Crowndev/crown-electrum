@@ -23,9 +23,9 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
-      	with:
-	  name: crown-electrum-osx
-	  path: dist/*	
+        with:
+          name: crown-electrum-osx
+          path: dist/*
 
   linux-build:
     name: Build Crown Electrum Linux Asset
@@ -48,9 +48,9 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
-      	with:
-	  name: crown-electrum-linux
-	  path: dist/*
+        with:
+          name: crown-electrum-linux
+          path: dist/*
           
   windows-build:
     name: Build Crown Electrum Windows Asset
@@ -73,6 +73,6 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
-      	with:
-	  name: crown-electrum-windows
-	  path: contrib/build-wine/dist/*
+        with:
+          name: crown-electrum-windows
+          path: contrib/build-wine/dist/*
