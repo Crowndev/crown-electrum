@@ -75,4 +75,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: crown-electrum-windows
-          path: contrib/build-wine/dist/*
+          path: contrib/build-wine/dist/electrum*exe
