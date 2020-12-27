@@ -1,14 +1,12 @@
-name: Release Build
+name: CI/CD Build
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
   workflow_dispatch:
   
 jobs:
   osx-build:
-    name: Build Crown Electrum OSX Release Asset
+    name: Build Crown Electrum OSX Asset
     runs-on: macos-latest
     steps:
       - name: Checkout code
@@ -25,17 +23,16 @@ jobs:
       
       - name: Package Files for upload
         run: zip -r crown-osx.zip dist
-      
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          files: crown-osx.zip
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+	with:
+	  name: crown-electrum-osx
+	  path: dist/*	
+		crown-osx.zip
           
   linux-build:
-    name: Build Crown Electrum Linux Release Asset
+    name: Build Crown Electrum Linux Asset
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -56,15 +53,15 @@ jobs:
       - name: Zip Files
         run: zip -r crown-linux.zip dist
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          files: crown-linux.zip
-
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+	with:
+	  name: crown-electrum-linux
+	  path: dist/*
+		crown-linux.zip
+          
   windows-build:
-    name: Build Crown Electrum Windows Release Asset
+    name: Build Crown Electrum Windows Asset
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -85,9 +82,9 @@ jobs:
       - name: Zip Files
         run: zip -r crown-windows.zip ./contrib/build-wine/dist
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          files: crown-windows.zip
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+	with:
+	  name: crown-electrum-windows
+	  path: contrib/build-wine/dist/*
+		crown-windows.zip
